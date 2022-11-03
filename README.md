@@ -9,7 +9,7 @@ Time spent: 10 hours spent in total
 ### 1. (Required) WordPress 4.0-4.7.2 - Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
 
 - [ ] Summary: In WordPress before 4.7.3 (wp-includes/embed.php), there is authenticated Cross-Site Scripting (XSS) in YouTube URL Embeds.
-               It llows an hacker to create random post on a site and store malicious Javascript code in it. The code will be executed when
+               It allows an hacker to create random post on a site and store malicious Javascript code in it. The code will be executed when
                a visitor views the post and when someone edits the post from WordPress dashboard.
   - Vulnerability types: XSS
   - Tested in version: 4.2
@@ -38,12 +38,14 @@ Time spent: 10 hours spent in total
   - Tested in version: 4.2
   - Fixed in version: 4.2.10
 - [ ] GIF Walkthrough: 
+
   - <img src= xss_img_attachment.gif />
-  -
+  
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
    - 2. Create a new post and select insert media to upload a image 
-   - 3. In attachment details, set the title of image to <img src="a" onerror="alert(document.cookie)" /> 
+   - 3. In attachment details, set the title of image to:
+   	 -  <img src="a" onerror="alert(document.cookie)" /> 
    - 4. In attachment display settings, select Link to Attachment Page. Insert the image into post. Publish the post.
    - 5. Whenever the attachment file is loaded, xss exploited script will be triggered.
    
