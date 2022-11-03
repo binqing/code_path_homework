@@ -76,6 +76,26 @@ Time spent: 10 hours spent in total
   - [CVE-2015-5623](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5623)
   - [Reference](https://klikki.fi/wordpress-core-stored-xss/)
   - [References](https://blog.sucuri.net/2017/09/stored-cross-site-scripting-vulnerability-in-wordpress-4-8-1.html)
+
+### 4. (Optional) User enumeration using wpscan
+
+- [ ] Summary: For our WordPress version, different error messages are displayed when a non-existent username is used to log in or when an invalid password is entered
+               for an existing user. Thus, we can determine whether or not a user account exists or not. It also does not limit log-in 
+               attemps. We can use wpscan to enumerate all users in the database, including those who have never posted or contributed to a post.
+  - Tested in version: 4.2
+  - Fixed in version: Unpatched
+- [ ] GIF Walkthrough:
+  - <img src= user_enumeration.gif/>
+  -
+- [ ] Steps to recreate: 
+   - 1. Open Kali linux terminal and run: "wpscan --url [INSERT_WORDPRESS_URL_NAME] --enumerate u"
+           - For example: wpscan --url http://wpdistillery.vm --enumerate u 
+- [ ] Affected source code:
+  - [Affected source code](https://core.trac.wordpress.org/browser/branches/4.1/src/wp-login.php)
+  - [Affected source code](https://github.com/WordPress/WordPress/blob/4.2-branch/wp-login.php)
+- [ ] References:
+  - [CVE-2009-2335](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2009-2335)
+  - [Reference](https://www.wpwhitesecurity.com/wordpress-username-disclosure-vulnerability/)
  
 ### 3. (Required) Title: WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS)
 
