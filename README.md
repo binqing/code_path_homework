@@ -66,7 +66,7 @@ Time spent: 10 hours spent in total
 - [ ] GIF Walkthrough:
 
   - <img src= XSS.gif />
-  
+  - 
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
    - 2. Create a new post
@@ -152,9 +152,7 @@ or HTML when creating or editing pages or posts.
    - 1. Log into WP as admin
    - 2. Create a new post
    - 3. Edit as text and put the following: 
-	Wanna A Suprise!!![caption width="2" caption='<a href="' ">]</a>
-	<a href="http://onMouseOver='alert(12345678910)'">CLICK ME!</a>
-   
+	- <img src= clickme.gif />
 - [ ] Affected source code:
   - [Affected source code](https://core.trac.wordpress.org/browser/tags/4.2.2/src/wp-includes/shortcodes.php)
   - [Affected source code](https://github.com/WordPress/WordPress/commit/f72b21af23da6b6d54208e5c1d65ececdaa109c8)
