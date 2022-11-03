@@ -1,1 +1,112 @@
-See branches for assignments
+# Project 7 - WordPress Pen Testing
+
+Time spent: 10 hours spent in total
+
+> Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
+
+## Pen Testing Report
+
+### 1. (Required) WordPress 4.0-4.7.2 - Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
+
+- [ ] Summary: In WordPress before 4.7.3 (wp-includes/embed.php), there is authenticated Cross-Site Scripting (XSS) in YouTube URL Embeds.
+A stored XSS vulnerability in YouTube Embed 3.3.2 (and possibly earlier versions) allows admin users to compromise other admins and super admins.  
+Vulnerability that makes it possible for a remote attacker to deface a random post on the site and store malicious Javascript code in it. This code would be executed when visitors view the post and when anyone edits the post from the WordPress dashboard.
+
+YouTube Embed is a WordPress plugin with over 30,000 active installs.
+  - Vulnerability types: XSS
+  - Tested in version: 4.2
+  - Fixed in version: 4.2.13
+  - [CVE identifiers] 
+- [ ] GIF Walkthrough: 
+- [ ] Steps to recreate: 
+      1. Log into WP as admin
+      2. Create a new post 
+      3. Edit as text and put: Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvgonload=alert(12345)\x3e'][/embed]
+- [ ] Affected source code:
+  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+  
+### 2. (Required) Vulnerability Name or ID
+
+- [ ] Summary: 
+  - Vulnerability types:
+  - Tested in version: 4.2
+  - Fixed in version: 
+- [ ] GIF Walkthrough: 
+- [ ] Steps to recreate: 
+- [ ] Affected source code:
+  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+
+### 3. (Required) Vulnerability Name or ID
+
+- [ ] Summary: 
+  - Vulnerability types:
+  - Tested in version: 4.2
+  - Fixed in version: 
+- [ ] GIF Walkthrough: 
+- [ ] Steps to recreate: 
+- [ ] Affected source code:
+  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+
+### 4. (Optional) Vulnerability Name or ID
+
+- [ ] Summary: 
+  - Vulnerability types:
+  - Tested in version:
+  - Fixed in version: 
+- [ ] GIF Walkthrough: 
+- [ ] Steps to recreate: 
+- [ ] Affected source code:
+  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+
+### 5. (Optional) Vulnerability Name or ID
+
+- [ ] Summary: 
+  - Vulnerability types:
+  - Tested in version: 4.2
+  - Fixed in version: 
+- [ ] GIF Walkthrough: 
+- [ ] Steps to recreate: 
+- [ ] Affected source code:
+  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
+  
+### 6. (Optional) Vulnerability Name or ID
+
+- [ ] Summary: 
+  - Vulnerability types:
+  - Tested in version: 4.2
+  - Fixed in version: 
+- [ ] GIF Walkthrough: 
+- [ ] Steps to recreate: 
+- [ ] Affected source code:
+  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
+
+## Assets
+
+List any additional assets, such as scripts or files
+
+## Resources
+
+- [WordPress Source Browser](https://core.trac.wordpress.org/browser/)
+- [WordPress Developer Reference](https://developer.wordpress.org/reference/)
+
+GIFs created with [ScreenToGif](https://www.screentogif.com/) 
+
+## Notes
+
+Describe any challenges encountered while doing the work
+
+## License
+
+    Copyright [yyyy] [name of copyright owner]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
