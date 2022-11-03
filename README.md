@@ -16,14 +16,15 @@ Time spent: 10 hours spent in total
   - Fixed in version: 4.2.13 
 - [ ] GIF Walkthrough: 
 - [ ] Steps to recreate: 
-      1. Log into WP as admin
-      2. Create a new post 
-      3. Edit as text and put: Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvgonload=alert(12345)\x3e'][/embed]
-- [ ] CVE identifiers:
-    [CVE-2017-6817](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6817)
+   - 1. Log into WP as admin
+   - 2. Create a new post 
+   - 3. Edit as text and put: 
+          - Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvg onload=alert(12345)\x3e'][/embed]     
 - [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-  - 
+  - [Affected source code](https://github.com/WordPress/WordPress/commit/419c8d97ce8df7d5004ee0b566bc5e095f0a6ca8)
+- [ ] References:
+  - [CVE-2017-6817](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6817)
+
 ### 2. (Required) Vulnerability Name or ID
 
 - [ ] Summary: 
@@ -33,7 +34,7 @@ Time spent: 10 hours spent in total
 - [ ] GIF Walkthrough: 
 - [ ] Steps to recreate: 
 - [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+  - [Link 1](https://github.com/WordPress/WordPress/commit/419c8d97ce8df7d5004ee0b566bc5e095f0a6ca8)
 
 ### 3. (Required) Vulnerability Name or ID
 
@@ -44,7 +45,7 @@ Time spent: 10 hours spent in total
 - [ ] GIF Walkthrough: 
 - [ ] Steps to recreate: 
 - [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+  - [Affected source code](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
 
 ### 4. (Optional) Vulnerability Name or ID
 
