@@ -15,7 +15,7 @@ Time spent: 10 hours spent in total
   - Tested in version: 4.2
   - Fixed in version: 4.2.13 
 - [ ] GIF Walkthrough: 
-  - <img src="YouTube_XSS.gif" alt="YouTube URL Embeds">
+  - <img src= YouTube_XSS.gif/>
   -
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
@@ -28,28 +28,32 @@ Time spent: 10 hours spent in total
 - [ ] References:
   - [CVE-2017-6817](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6817)
   - [Reference](https://blog.sucuri.net/2017/03/stored-xss-in-wordpress-core.html)
+ 
+### 2. (Required) WordPress 2.5-4.6 - Authenticated Stored Cross-Site Scripting via Image Filename
 
-### 2. (Required) Vulnerability Name or ID
-
-- [ ] Summary: 
-  - Vulnerability types:
+- [ ] Summary: In WordPress before 4.6.1, the media_handle_upload function in wp-admin/includes/media.php has a Cross-Site Scripting (XSS) 
+               vulnerability. It allows remote attackers to inject arbitrary web script or HTML by tricking an administratori nto uploading 
+               an image file that has a crafted filename.
+  - Vulnerability types: XSS
   - Tested in version: 4.2
-  - Fixed in version: 
+  - Fixed in version: 4.2.10
 - [ ] GIF Walkthrough: 
+  - <img src= xss_img_attachment.gif />
+  -
 - [ ] Steps to recreate: 
+   - 1. Log into WP as admin
+   - 2. Create a new post and select insert media to upload a image 
+   - 3. In attachment details, set the title of image to <img src="a" onerror="alert(document.cookie)" /> 
+   - 4. In attachment display settings, select Link to Attachment Page. Insert the image into post. Publish the post.
+   - 5. Whenever the attachment file is loaded, xss exploited script will be triggered.
+   
 - [ ] Affected source code:
-  - [Link 1](https://github.com/WordPress/WordPress/commit/419c8d97ce8df7d5004ee0b566bc5e095f0a6ca8)
-
-### 3. (Required) Vulnerability Name or ID
-
-- [ ] Summary: 
-  - Vulnerability types:
-  - Tested in version: 4.2
-  - Fixed in version: 
-- [ ] GIF Walkthrough: 
-- [ ] Steps to recreate: 
-- [ ] Affected source code:
-  - [Affected source code](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+  - [Affected source code](https://github.com/WordPress/WordPress/commit/c9e60dab176635d4bfaaf431c0ea891e4726d6e0)
+  - [Affected source code](https://core.trac.wordpress.org/browser/tags/4.2.2/src/wp-admin/includes/media.php)
+- [ ] References:
+  - [CVE-2017-7168](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7168)
+  - [Reference](https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_vulnerability_in_wordpress_due_to_unsafe_processing_of_file_names.html) 
+added
 
 ### 4. (Optional) Vulnerability Name or ID
 
