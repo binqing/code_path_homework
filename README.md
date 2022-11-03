@@ -77,11 +77,12 @@ Time spent: 10 hours spent in total
   - [Reference](https://klikki.fi/wordpress-core-stored-xss/)
   - [References](https://blog.sucuri.net/2017/09/stored-cross-site-scripting-vulnerability-in-wordpress-4-8-1.html)
 
-### 4. (Optional) User enumeration using wpscan
+### 4. (Optional) User Enumeration using WPScan
 
 - [ ] Summary: For our WordPress version, different error messages are displayed when a non-existent username is used to log in or when an invalid password is entered
                for an existing user. Thus, we can determine whether or not a user account exists or not. It also does not limit log-in 
                attemps. We can use wpscan to enumerate all users in the database, including those who have never posted or contributed to a post.
+  - Vulnerability types: User Enumeration 
   - Tested in version: 4.2
   - Fixed in version: Unpatched
 - [ ] GIF Walkthrough:
@@ -96,9 +97,43 @@ Time spent: 10 hours spent in total
 - [ ] References:
   - [CVE-2009-2335](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2009-2335)
   - [Reference](https://www.wpwhitesecurity.com/wordpress-username-disclosure-vulnerability/)
- 
-### 3. (Required) Title: WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS)
 
+### 5. (Optional) Enumerate WordPress user accounts and brute force passwords attack using WPScan
+
+- [ ] Summary: Enumerating WordPress users is the first step in a brute force attack in order to gain access to a WordPress account. 
+               Wordpressdoes not limit the number of login attempts, so we use WPScan. WPScan has the option to scan a target website 
+               to retrieve a list of account names. We can also brute force root passwords using WPScan on Kali Linux. We could also 
+               provide a wordlist, a list of common passowrds for wpscan to carry out the brute force password attack.  A example of a wordlist is rockyou-75.txt. 
+  - Vulnerability types: Login Vulnerability
+  - Tested in version: 4.2
+  - Fixed in version: Unpatched
+- [ ] GIF Walkthrough:
+  - <img src= brute-force-password.gif/>
+ 
+- [ ] Steps to recreate: 
+  - If you want to get a specific user's password:
+   - 1. Download the rockyou.txt dictionary fille.
+   - 2. Open Kali linux terminal 
+   - 3. To get the name of a specific userL run: wpscan --url http://wpdistillery.vm --enumerate u.
+   - 4. Then run: wpscan --url http://wpdistillery.vm -P /home/kalizhe/Desktop/WebSecurity/rockyou-75.txt --usernames sophia.
+        WPScan will return the password of username sophia's password. 
+        
+ - [ ] GIF Walkthrough:
+  - <img src= brute_force_passwords.gif/>
+  
+- [ ] Steps to recreate:
+  - To get password for all WordPress account users:
+   - 1. Download the rockyou.txt dictionary fille.
+   - 2. Open Kali linux terminal and run: 
+	        wpscan --url http://wpdistillery.vm -P /home/kalizhe/Desktop/WebSecurity/rockyou-75.txt 
+- [ ] Affected source code:
+  - [Affected source code](https://github.com/WordPress/WordPress/blob/4.2-branch/wp-login.php)
+- [ ] References:
+  - [CVE-2009-2335](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2009-2335)
+  - [Reference](https://www.wpwhitesecurity.com/strong-wordpress-passwords-wpscan/)
+
+
+### 5
 - [ ] Summary: Simple Cross-Site Scripting upon post creation which can lead to external script execution, cross site request forgery attacks, and remote command execution attacks.
   - Vulnerability types: XSS
   - Tested in version: 4.2
@@ -135,7 +170,7 @@ Time spent: 10 hours spent in total
 ### 5. (Optional) Vulnerability Name or ID
 
 - [ ] Summary: 
-  - Vulnerability types:
+  - Vulnerability types: Login Vulnerability
   - Tested in version: 4.2
   - Fixed in version: 
 - [ ] GIF Walkthrough: 
@@ -143,16 +178,7 @@ Time spent: 10 hours spent in total
 - [ ] Affected source code:
   - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
   
-### 6. (Optional) Vulnerability Name or ID
 
-- [ ] Summary: 
-  - Vulnerability types:
-  - Tested in version: 4.2
-  - Fixed in version: 
-- [ ] GIF Walkthrough: 
-- [ ] Steps to recreate: 
-- [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
 
 ## Assets
 
