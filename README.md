@@ -24,9 +24,10 @@ Time spent: 10 hours spent in total
     - [ ] Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvg onload=alert(12345)\x3e'][/embed]     
 - [ ] Affected source code:
   - [Affected source code](https://github.com/WordPress/WordPress/commit/419c8d97ce8df7d5004ee0b566bc5e095f0a6ca8)
+  - [Affected source code](https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/class-wp-embed.php)
 - [ ] References:
   - [CVE-2017-6817](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6817)
-  - [Reference](https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/class-wp-embed.php)
+  - [Reference](https://blog.sucuri.net/2017/03/stored-xss-in-wordpress-core.html)
 
 ### 2. (Required) Vulnerability Name or ID
 
