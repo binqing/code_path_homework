@@ -70,8 +70,8 @@ Time spent: 10 hours spent in total
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
    - 2. Create a new post
-   - 3. Edit as text and put: <a href="[caption code=">]</a><a title=" onmouseover=alert(123) ">link</a>
-
+   - 3. Edit as text and put: 
+ 	- -<img src=xss-newpost.png />
 - [ ] Affected source code:
   - [Affected source code](https://core.trac.wordpress.org/changeset/33359)
 - [ ] References:
@@ -104,9 +104,9 @@ Time spent: 10 hours spent in total
 
 ### 5. (Optional) Enumerate WordPress user accounts and brute force passwords attack using WPScan
 
-- [ ] Summary: Wordpressdoes not limit the number of login attempts, so we use WPScan. WPScan has the option to scan a target website 
-               to retrieve a list of account names. We can also brute force root passwords using WPScan on Kali Linux. We could also 
-               provide a wordlist, a list of common passowrds for wpscan to carry out the brute force password attack.  A example of a wordlist is rockyou-75.txt. 
+- [ ] Summary: Wordpressdoes does not limit the number of login attempts, so we use WPScan to retrieve both the usernames and passwords. WPScan has the option 
+               to scan a target website to retrieve a list of account names. We can also brute force root passwords using WPScan on Kali Linux. We could also 
+               provide a wordlist, a list of common passowrds for WPScan to carry out the brute force password attack.  A example of a wordlist is rockyou-75.txt. 
   - Vulnerability types: Login Vulnerability
   - Tested in version: 4.2
   - Fixed in version: Unpatched
