@@ -15,7 +15,7 @@ Time spent: 10 hours spent in total
   - Tested in version: 4.2
   - Fixed in version: 4.2.13 
 - [ ] GIF Walkthrough: 
-  - <img src="YouTube-XSS.gif" alt="YouTube URL Embeds">
+  - <img src="YouTube_XSS.gif" alt="YouTube URL Embeds">
   -
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
