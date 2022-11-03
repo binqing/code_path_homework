@@ -81,7 +81,7 @@ Time spent: 10 hours spent in total
 
 - [ ] Summary: For our WordPress version, different error messages are displayed when a non-existent username is used to log in or when an invalid password is entered
                for an existing user. Thus, we can determine whether or not a user account exists or not. It also does not limit log-in 
-               attemps. We can use wpscan to enumerate all users in the database, including those who have never posted or contributed to a post.
+               attemps. We can use WPScan to enumerate all users in the database, including those who have never posted or contributed to a post.
   - Vulnerability types: User Enumeration 
   - Tested in version: 4.2
   - Fixed in version: Unpatched
@@ -133,51 +133,33 @@ Time spent: 10 hours spent in total
   - [Reference](https://www.wpwhitesecurity.com/strong-wordpress-passwords-wpscan/)
 
 
-### 5
-- [ ] Summary: Simple Cross-Site Scripting upon post creation which can lead to external script execution, cross site request forgery attacks, and remote command execution attacks.
+### 6. (Optional) WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS)
+- [ ] Summary: WordPress versions 4.2 is vulnerable to a cross-site scripting vulnerability when processing shortcode tags. By taking advantage of 
+WordPress' mishandling of unclosed HTML elements during processing of shortcode tags, this vulnerability allows remote attackers to inject arbitrary web script 
+or HTML elements when creating or editing pages or posts.
   - Vulnerability types: XSS
   - Tested in version: 4.2
-  - Fixed in version: 4.2.10
+  - Fixed in version: 4.2.5
 - [ ] GIF Walkthrough: 
-  - <img src= xss_img_attachment.gif />
+  - <img src= xss_short_code.gif />
   -
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
-   - 2. Create a new post and select insert media to upload a image 
-   - 3. In attachment details, set the title of image to <img src="a" onerror="alert(document.cookie)" /> 
-   - 4. In attachment display settings, select Link to Attachment Page. Insert the image into post. Publish the post.
-   - 5. Whenever the attachment file is loaded, xss exploited script will be triggered.
+   - 2. Create a new post
+   - 3. Edit as text and put the following: 
+	Wanna A Suprise!!![caption width="2" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(12345678910)'">CLICK ME!</a>
    
 - [ ] Affected source code:
-  - [Affected source code](https://github.com/WordPress/WordPress/commit/c9e60dab176635d4bfaaf431c0ea891e4726d6e0)
-  - [Affected source code](https://core.trac.wordpress.org/browser/tags/4.2.2/src/wp-admin/includes/media.php)
+  - [Affected source code](https://core.trac.wordpress.org/browser/tags/4.2.2/src/wp-includes/shortcodes.php)
+  - [Affected source code](https://github.com/WordPress/WordPress/commit/f72b21af23da6b6d54208e5c1d65ececdaa109c8)
 - [ ] References:
-  - [CVE-2017-7168](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7168)
-  - [Reference](https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_vulnerability_in_wordpress_due_to_unsafe_processing_of_file_names.html) 
+  - [CVE-2015-5714](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5714)
+  - [Reference](https://blog.checkpoint.com/2015/09/15/finding-vulnerabilities-in-core-wordpress-a-bug-hunters-trilogy-part-iii-ultimatum/)
+  - [Reference](https://blog.knownsec.com/2015/09/wordpress-vulnerability-analysis-cve-2015-5714-cve-2015-5715/)
  
 
-### 4.Title: WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS)
 
-- [ ] Summary: 
-  - Vulnerability types:
-  - Tested in version:
-  - Fixed in version: 
-- [ ] GIF Walkthrough: 
-- [ ] Steps to recreate: 
-- [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
 
-### 5. (Optional) Vulnerability Name or ID
-
-- [ ] Summary: 
-  - Vulnerability types: Login Vulnerability
-  - Tested in version: 4.2
-  - Fixed in version: 
-- [ ] GIF Walkthrough: 
-- [ ] Steps to recreate: 
-- [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
-  
 
 
 ## Assets
