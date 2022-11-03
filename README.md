@@ -51,10 +51,57 @@ Time spent: 10 hours spent in total
   - [Affected source code](https://github.com/WordPress/WordPress/commit/c9e60dab176635d4bfaaf431c0ea891e4726d6e0)
   - [Affected source code](https://core.trac.wordpress.org/browser/tags/4.2.2/src/wp-admin/includes/media.php)
 - [ ] References:
-  - [CVE-2017-7168](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7168)
+  - [CVE-2016-7168](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7168)
   - [Reference](https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_vulnerability_in_wordpress_due_to_unsafe_processing_of_file_names.html) 
 
-### 4. (Optional) Vulnerability Name or ID
+### 3. (Required) WordPress <= 4.2.2 - Authenticated Stored Cross-Site Scripting (XSS) in Creating New Post
+
+- [ ] Summary: Cross-Site Scripting vulnerability in the text editor box allows remote hackers to inject malicious code into the content
+               of a post if they want to create a new post. This post can be later read by others who visits the site and included in dynamic content. 
+  - Vulnerability types: XSS
+  - Tested in version: 4.2
+  - Fixed in version: 4.2.3
+- [ ] GIF Walkthrough:
+  - <img src= XSS.gif />
+  -
+- [ ] Steps to recreate: 
+   - 1. Log into WP as admin
+   - 2. Create a new post
+   - 3. Edit as text and put: <a href="[caption code=">]</a><a title=" onmouseover=alert(123) ">link</a>
+
+- [ ] Affected source code:
+  - [Affected source code](https://core.trac.wordpress.org/changeset/33359)
+- [ ] References:
+  - [CVE-2015-5622](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5622)
+  - [CVE-2015-5623](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5623)
+  - [Reference](https://klikki.fi/wordpress-core-stored-xss/)
+  - [References](https://blog.sucuri.net/2017/09/stored-cross-site-scripting-vulnerability-in-wordpress-4-8-1.html)
+ 
+### 3. (Required) Title: WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS)
+
+- [ ] Summary: Simple Cross-Site Scripting upon post creation which can lead to external script execution, cross site request forgery attacks, and remote command execution attacks.
+  - Vulnerability types: XSS
+  - Tested in version: 4.2
+  - Fixed in version: 4.2.10
+- [ ] GIF Walkthrough: 
+  - <img src= xss_img_attachment.gif />
+  -
+- [ ] Steps to recreate: 
+   - 1. Log into WP as admin
+   - 2. Create a new post and select insert media to upload a image 
+   - 3. In attachment details, set the title of image to <img src="a" onerror="alert(document.cookie)" /> 
+   - 4. In attachment display settings, select Link to Attachment Page. Insert the image into post. Publish the post.
+   - 5. Whenever the attachment file is loaded, xss exploited script will be triggered.
+   
+- [ ] Affected source code:
+  - [Affected source code](https://github.com/WordPress/WordPress/commit/c9e60dab176635d4bfaaf431c0ea891e4726d6e0)
+  - [Affected source code](https://core.trac.wordpress.org/browser/tags/4.2.2/src/wp-admin/includes/media.php)
+- [ ] References:
+  - [CVE-2017-7168](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7168)
+  - [Reference](https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_vulnerability_in_wordpress_due_to_unsafe_processing_of_file_names.html) 
+ 
+
+### 4.Title: WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS)
 
 - [ ] Summary: 
   - Vulnerability types:
