@@ -45,12 +45,7 @@ Time spent: 10 hours spent in total
    - 1. Log into WP as admin
    - 2. Create a new post and select insert media to upload a image 
    - 3. In attachment details, set the title of image to:
-
-
-   	 -  <img src="a" onerror="alert(document.cookie)" /> 
-
-
-
+    -<img src=xss-instruction.png /> 
    - 4. In attachment display settings, select Link to Attachment Page. Insert the image into post. Publish the post.
    - 5. Whenever the attachment file is loaded, xss exploited script will be triggered.
    
