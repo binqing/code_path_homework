@@ -32,7 +32,7 @@ Time spent: 10 hours spent in total
 ### 2. (Required) WordPress 2.5-4.6 - Authenticated Stored Cross-Site Scripting via Image Filename
 
 - [ ] Summary: In WordPress before 4.6.1, the media_handle_upload function in wp-admin/includes/media.php has a Cross-Site Scripting (XSS) 
-               vulnerability. It allows remote attackers to inject arbitrary web script or HTML by tricking an administratori nto uploading 
+               vulnerability. It allows remote attackers to inject arbitrary web script or HTML by tricking an administrator into uploading 
                an image file that has a crafted filename.
   - Vulnerability types: XSS
   - Tested in version: 4.2
@@ -53,7 +53,6 @@ Time spent: 10 hours spent in total
 - [ ] References:
   - [CVE-2017-7168](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7168)
   - [Reference](https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_vulnerability_in_wordpress_due_to_unsafe_processing_of_file_names.html) 
-added
 
 ### 4. (Optional) Vulnerability Name or ID
 
