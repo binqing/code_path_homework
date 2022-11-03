@@ -104,7 +104,7 @@ Time spent: 10 hours spent in total
 
 ### 5. (Optional) Enumerate WordPress user accounts and brute force passwords attack using WPScan
 
-- [ ] Summary: Wordpressdoes does not limit the number of login attempts, so we use WPScan to retrieve both the usernames and passwords. WPScan has the option 
+- [ ] Summary: WordPress does not limit the number of login attempts, so we use WPScan to retrieve both the usernames and passwords. WPScan has the option 
                to scan a target website to retrieve a list of account names. We can also brute force root passwords using WPScan on Kali Linux. We could also 
                provide a wordlist, a list of common passowrds for WPScan to carry out the brute force password attack.  A example of a wordlist is rockyou-75.txt. 
   - Vulnerability types: Login Vulnerability
