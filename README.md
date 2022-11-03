@@ -58,14 +58,15 @@ Time spent: 10 hours spent in total
 
 ### 3. (Required) WordPress <= 4.2.2 - Authenticated Stored Cross-Site Scripting (XSS) in Creating New Post
 
-- [ ] Summary: Cross-Site Scripting vulnerability in the text editor box allows remote hackers to inject malicious code into the content
-               of a post if they want to create a new post. This post can be later read by others who visits the site and included in dynamic content. 
+- [ ] Summary: Cross-Site Scripting vulnerability in the text editor box allows remote hackers to inject arbitrary web script or HTML into the content
+               of a post when creating a new post. This post can be later read by others who visits the site and included in dynamic content. 
   - Vulnerability types: XSS
   - Tested in version: 4.2
   - Fixed in version: 4.2.3
 - [ ] GIF Walkthrough:
+
   - <img src= XSS.gif />
-  -
+  
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
    - 2. Create a new post
@@ -77,19 +78,20 @@ Time spent: 10 hours spent in total
   - [CVE-2015-5622](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5622)
   - [CVE-2015-5623](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5623)
   - [Reference](https://klikki.fi/wordpress-core-stored-xss/)
-  - [References](https://blog.sucuri.net/2017/09/stored-cross-site-scripting-vulnerability-in-wordpress-4-8-1.html)
+  - [Reference](https://blog.sucuri.net/2017/09/stored-cross-site-scripting-vulnerability-in-wordpress-4-8-1.html)
 
 ### 4. (Optional) User Enumeration using WPScan
 
-- [ ] Summary: For our WordPress version, different error messages are displayed when a non-existent username is used to log in or when an invalid password is entered
-               for an existing user. Thus, we can determine whether or not a user account exists or not. It also does not limit log-in 
-               attemps. We can use WPScan to enumerate all users in the database, including those who have never posted or contributed to a post.
+- [ ] Summary: For our WordPress version, different error messages are displayed when a non-existent username is used to log in or when an invalid password 
+	       is entered for an existing user. Thus, we can determine whether or not a user account exists or not. It also does not limit the number of login 
+               attemps. Enumerating WordPress users is the first step in a brute force attack in order to gain access to a WordPress account. We can use WPScan to 		  retrieve al list of all users, including those who have never posted or contributed to a post.
   - Vulnerability types: User Enumeration 
   - Tested in version: 4.2
   - Fixed in version: Unpatched
 - [ ] GIF Walkthrough:
+
   - <img src= user_enumeration.gif/>
-  -
+  
 - [ ] Steps to recreate: 
    - 1. Open Kali linux terminal and run: "wpscan --url [INSERT_WORDPRESS_URL_NAME] --enumerate u"
            - For example: wpscan --url http://wpdistillery.vm --enumerate u 
@@ -102,25 +104,25 @@ Time spent: 10 hours spent in total
 
 ### 5. (Optional) Enumerate WordPress user accounts and brute force passwords attack using WPScan
 
-- [ ] Summary: Enumerating WordPress users is the first step in a brute force attack in order to gain access to a WordPress account. 
-               Wordpressdoes not limit the number of login attempts, so we use WPScan. WPScan has the option to scan a target website 
+- [ ] Summary: Wordpressdoes not limit the number of login attempts, so we use WPScan. WPScan has the option to scan a target website 
                to retrieve a list of account names. We can also brute force root passwords using WPScan on Kali Linux. We could also 
                provide a wordlist, a list of common passowrds for wpscan to carry out the brute force password attack.  A example of a wordlist is rockyou-75.txt. 
   - Vulnerability types: Login Vulnerability
   - Tested in version: 4.2
   - Fixed in version: Unpatched
-- [ ] GIF Walkthrough:
+- [ ] GIF Walkthrough: for getting a specific user's password:
+
   - <img src= brute-force-password.gif/>
  
-- [ ] Steps to recreate: 
-  - If you want to get a specific user's password:
+- [ ] Steps to recreate:
    - 1. Download the rockyou.txt dictionary fille.
    - 2. Open Kali linux terminal 
    - 3. To get the name of a specific userL run: wpscan --url http://wpdistillery.vm --enumerate u.
    - 4. Then run: wpscan --url http://wpdistillery.vm -P /home/kalizhe/Desktop/WebSecurity/rockyou-75.txt --usernames sophia.
         WPScan will return the password of username sophia's password. 
         
- - [ ] GIF Walkthrough:
+ - [ ] GIF Walkthrough for getting passwords for all WordPress account users:
+ 
   - <img src= brute_force_passwords.gif/>
   
 - [ ] Steps to recreate:
@@ -136,15 +138,16 @@ Time spent: 10 hours spent in total
 
 
 ### 6. (Optional) WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS)
-- [ ] Summary: WordPress versions 4.2 is vulnerable to a cross-site scripting vulnerability when processing shortcode tags. By taking advantage of 
+- [ ] Summary: WordPress versions before 4.3.1 is vulnerable to a cross-site scripting vulnerability in processing shortcode tags. By taking advantage of 
 WordPress' mishandling of unclosed HTML elements during processing of shortcode tags, this vulnerability allows remote attackers to inject arbitrary web script 
-or HTML elements when creating or editing pages or posts.
+or HTML when creating or editing pages or posts.
   - Vulnerability types: XSS
   - Tested in version: 4.2
   - Fixed in version: 4.2.5
-- [ ] GIF Walkthrough: 
+- [ ] GIF Walkthrough:
+
   - <img src= xss_short_code.gif />
-  -
+  
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
    - 2. Create a new post
@@ -158,12 +161,8 @@ or HTML elements when creating or editing pages or posts.
   - [CVE-2015-5714](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5714)
   - [Reference](https://blog.checkpoint.com/2015/09/15/finding-vulnerabilities-in-core-wordpress-a-bug-hunters-trilogy-part-iii-ultimatum/)
   - [Reference](https://blog.knownsec.com/2015/09/wordpress-vulnerability-analysis-cve-2015-5714-cve-2015-5715/)
- 
-
-
-
-
-
+  
+  
 ## Assets
 
 List any additional assets, such as scripts or files
