@@ -9,22 +9,21 @@ Time spent: 10 hours spent in total
 ### 1. (Required) WordPress 4.0-4.7.2 - Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
 
 - [ ] Summary: In WordPress before 4.7.3 (wp-includes/embed.php), there is authenticated Cross-Site Scripting (XSS) in YouTube URL Embeds.
-A stored XSS vulnerability in YouTube Embed 3.3.2 (and possibly earlier versions) allows admin users to compromise other admins and super admins.  
-Vulnerability that makes it possible for a remote attacker to deface a random post on the site and store malicious Javascript code in it. This code would be executed when visitors view the post and when anyone edits the post from the WordPress dashboard.
-
-YouTube Embed is a WordPress plugin with over 30,000 active installs.
+               It llows an hacker to create random post on a site and store malicious Javascript code in it. The code will be executed when
+               a visitor views the post and when someone edits the post from WordPress dashboard.
   - Vulnerability types: XSS
   - Tested in version: 4.2
-  - Fixed in version: 4.2.13
-  - [CVE identifiers] 
+  - Fixed in version: 4.2.13 
 - [ ] GIF Walkthrough: 
 - [ ] Steps to recreate: 
       1. Log into WP as admin
       2. Create a new post 
       3. Edit as text and put: Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvgonload=alert(12345)\x3e'][/embed]
+- [ ] CVE identifiers:
+    [CVE-2017-6817](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6817)
 - [ ] Affected source code:
   - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-  
+  - 
 ### 2. (Required) Vulnerability Name or ID
 
 - [ ] Summary: 
