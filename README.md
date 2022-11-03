@@ -15,13 +15,13 @@ Time spent: 10 hours spent in total
   - Tested in version: 4.2
   - Fixed in version: 4.2.13 
 - [ ] GIF Walkthrough: 
+
   - <img src= YouTube_XSS.gif/>
-  -
+  
 - [ ] Steps to recreate: 
    - 1. Log into WP as admin
    - 2. Create a new post 
-   - 3. Edit as text and put: 
-    - [ ] Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvg onload=alert(12345)\x3e'][/embed]     
+   - 3. Edit as text and put: Here is the YouTube link: [embed src='http://youtube.com/embed/12345\x3csvg onload=alert(12345)\x3e'][/embed]     
 - [ ] Affected source code:
   - [Affected source code](https://github.com/WordPress/WordPress/commit/419c8d97ce8df7d5004ee0b566bc5e095f0a6ca8)
   - [Affected source code](https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/class-wp-embed.php)
