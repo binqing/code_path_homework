@@ -17,29 +17,47 @@ Each color is vulnerable to only 2 of the 6 possible exploits. First discover wh
 
 ## Blue
 
-Vulnerability #1: __________________
+Vulnerability #1: SQL Injection (SQLi)
 
 Description:
 
-<img src="blue-vuln1.gif">
+<img src="blue-sqli.gif">
 
+Vulnerability #2: Session Hijacking
+
+Description:
+
+<img src="blue-sessionhijacking.gif">
 
 ## Green
 
-Vulnerability #1: __________________
+Vulnerability #1: Cross-Site Scripting (XSS)
 
 Description:
 
-<img src="green-vuln1.gif">
+<img src="green-xss.gif">
+
+Vulnerability #2: Username Enumeration
+
+Description:
+
+<img src="green-user_enumeration.gif">
 
 
 ## Red
 
-Vulnerability #1: __________________
+Vulnerability #1: Insecure Direct Object Reference (IDOR)
 
 Description:
 
-<img src="red-vuln1.gif">
+<img src="red-idor.gif">
+
+
+Vulnerability #2: Cross-Site Request Forgery (CSRF)
+
+Description:
+
+<img src="red-csrf.gif">
 
 
 ## Notes
