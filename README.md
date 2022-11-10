@@ -108,10 +108,10 @@ Vulnerability #2: Cross-Site Request Forgery (CSRF)
 Description:
 
 * Created a malicious script that utilizes the logged in user's access permissions to forge a request to the site's database.
-* The malicious script is an auto-submitting form that performs a post request and will midify a user's first name and last name.
+* The malicious script is an auto-submitting form that performs a post request and will modify a user's first name and last name.
 * See csfr-form.html for the malicious script.
 * Posted the link to the malicious script on the site's contact form. 
-* When an admin user logged in and follows the link will modify the information of another user in the database.
+* When an admin user logged in and follows the link, the script will run and it will modify the information of another authenticated user.
 * The site does not have CSRF protections on the admin area.
 
 * Gif Walkthrough:
