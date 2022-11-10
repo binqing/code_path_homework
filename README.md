@@ -122,7 +122,6 @@ Description:
 
 GIFs created with [ScreenToGif](https://www.screentogif.com/) 
 
-
 ## Notes
 
 Describe any challenges encountered while doing the work
