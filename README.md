@@ -32,7 +32,7 @@ Description:
 ```
    'or SLEEP(5)=0--'
 ```
-* The last sql command from above cause the database command to wait for 5 seconds while quering the database.
+* The last sql command from above cause the database command to wait for 5 seconds while querying the database.
 
 * Gif Walkthrough: 
                      
@@ -57,8 +57,7 @@ Vulnerability #1: Cross-Site Scripting (XSS)
 
 Description:
 
-* A stored XSS vulnerability is found at /green/public/contact.php where anyone can submit feedback on the feedback form. 
-* Attacker can inject an XSS in the site's feedback form. 
+* A stored XSS vulnerability is found at /green/public/contact.php where attackers can inject an XSS in the site's feedback form. 
 * Injected XSS command: 
 ```
     <script>alert('Jasmine found the XSS!');</script>
@@ -77,18 +76,29 @@ Description:
 * When we try to log in with an invalid username and password, the error message displayed was not bolded.
 * However, when we try to log in with a valid username such as " jmonroe99 " and an invalid password, the same error message becomes bolded.  
 * This allows us to collect a list of valid usernames and we can use that to perform a brute force password attack on the webiste.  
-* Chrome's debugging tool shows that the site assigns two different classes "failed" and "failure" to the failure login error message depending on whether the username name is valid or not. Bolded font is applied to one class but not the other. 
+* Chrome's debugging tool shows that the site assigns two different classes "failure" and "failed" to the failure login error message depending on whether the username name is valid or not. Bolded font is applied to the former class but not the latter. 
 
 * Gif Walkthrough:
 
 <img src="green-user_enumeration.gif">
-
 
 ## Red
 
 Vulnerability #1: Insecure Direct Object Reference (IDOR)
 
 Description:
+* Attackers could modify the id parameter of the site's url to access some sensitive information that is not supposed to be public. 
+* The salesperson page only displayed information for id = 1, 2, 3, 4, 5, 6, 7, 8, 9. 
+* Below are the salesperson accounts that attackers is able to access: (see gif)  
+```
+  - ID: 10 NAME: Testy McTesterson (NOT PUBLIC UNTIL SEPT. 1)  <!-- Illegal access -->
+  - ID: 11 NAME: Lazy Lazyman (FIRED FOR STEALING)             <!-- Illegal access -->
+  - ID: 12 NAME: John Wick                                     <!-- Illegal access -->
+```
+* The other two green and blue websites have implemented access controls where a reference to a direct object is checked for each instance.
+* The red site did not properly redirect user back to the public salesperson list page when the id parameter for the url is 10, 11, and 12.
+
+* Gif Walkthrough:
 
 <img src="red-idor.gif">
 
@@ -97,7 +107,20 @@ Vulnerability #2: Cross-Site Request Forgery (CSRF)
 
 Description:
 
+* Created a malicious script that utilizes the logged in user's access permissions to forge a request to the site's database.
+* The malicious script is an auto-submitting form that performs a post request and will midify a user's first name and last name.
+* See csfr-form.html for the malicious script.
+* Posted the link to the malicious script on the site's contact form. 
+* When an admin user logged in and follows the link will modify the information of another user in the database.
+* The site does not have CSRF protections on the admin area.
+
+* Gif Walkthrough:
+
 <img src="red-csrf.gif">
+
+## Resources
+
+GIFs created with [ScreenToGif](https://www.screentogif.com/) 
 
 
 ## Notes
