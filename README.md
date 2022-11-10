@@ -111,7 +111,7 @@ Description:
 * The malicious script is an auto-submitting form that performs a post request and will modify a user's first name and last name.
 * See csfr-form.html for the malicious script.
 * Posted the link to the malicious script on the site's contact form. 
-* When an admin user logged in and follows the link, the script will run and it will modify the information of another authenticated user.
+* When an admin user logged in and follows the link, the script will run and it will modify another authenticated user's information.
 * The site does not have CSRF protections on the admin area.
 
 * Gif Walkthrough:
