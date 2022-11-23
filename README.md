@@ -60,17 +60,53 @@
 
 #### X Malware
 
-**Summary:** How did you find it? Which honeypot captured it? What does each malware do?
+**Summary:** I used VirusTotal to scan and determine what type of malware it is. Conpot honeypot captured it.
 
-MD5 Hash: *Run `md5sum` on the file and record the hash here.*
+MD5 Hash: *e4e0917720d827ef0fb579644e37bac8*
 
-SHA1 Hash: *Run `sha1sum` on the file and record the hash here.*
+SHA1 Hash: *7a3b9f423dd2bef37f480728f4f46ab98a30e3d2*
 
-<img src="x-malware.gif">
+SHA-256 Hash: *37aa42540bc375a6cf1c889dd05322a8516cbcc5f88e76463975ab25478688de*
+
+Here is the gif:
+<img src="malware-gif.gif">
+
+
+**Summary:** This is also captured by conpot honeypot. 
+
+MD5 Hash: *791be5467177745534ff841972ae74ca*
+
+SHA1 Hash: *c876cacd5dcd1af6f5b96ca3a75e2e38898375ce*
+
+SHA-256 Hash: *257afeeb48cae3cce150c6213ffd227b5842e7d9ef76076f9739714caa2d8ec8*
+THer 
+Here is the gif:
+
+<img src="malware-gif-2.gif">
+
+
+**Summary:** Dionaea honeypot captured the malware.
+
+<img src="malware_3.png">
+
+
+**Summary:** I also tried running the md5sum and sha1sum commands on the session.json file for my honeypots on Kali Linux. 
+
+MD5 Hash: *5f7ca6f64902da38e938eaf18fd13762*
+
+SHA1 Hash: **8e12a67af7291838dca4c897decf2f527a8e1e03*
+
+I search these two hashes on VirusTotal and there were no match found.
+
+Here is the gif:
+
+<img src="session-gif.gif">
 
 ## Resources
 
 GIFs created with [ScreenToGif](https://www.screentogif.com/) 
+
+[VirtusToal](https://www.virustotal.com/gui/home/search) was used to identify malware.
 
 ## Notes
 
