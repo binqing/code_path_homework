@@ -1,4 +1,4 @@
-# Honeypot Assignment
+# Unit 10 & 11 Project: Honeypot Assignment
 
 **Time spent: 10 hours spent in total
 
@@ -15,21 +15,45 @@
 
 **Summary:** Dionaea is a low-interaction honeypot that is used to trap malware samples and attack payloads. It is meant to be a nepenthes successor, embedding python as scripting language, and uses libemu to detect shellcodes. It supports ipv6 and tls.
 
+- Please see gif for the steps. 
+
 <img src="dionaea-honeypot.gif">
 
 ### Database Backup (Required) 
 
-**Summary:** What is the RDBMS that MHN-Admin uses? What information does the exported JSON file record?
-
-*Be sure to upload session.json directly to this GitHub repo/branch in order to get full credit.*
+**Summary:** MHN-Admin uses MongoDB to store the data collected from honeypots. The exported JSON file records the following attributes: 
+  - id, protocol, hpfeed_id, timestamp, source_ip, source_port, destination_port, identifier, and name of honeypot.
+```
+{
+  "_id": {
+    "$oid": "637dca97616a1e6699d1e522"
+  },
+  "protocol": "pcap",
+  "hpfeed_id": {
+    "$oid": "637dca95616a1e6699d1e521"
+  },
+  "timestamp": {
+    "$date": "2022-11-23T07:24:05.819Z"
+  },
+  "source_ip": "5.188.206.102",
+  "source_port": 47478,
+  "destination_port": 52590,
+  "identifier": "b7d25c6a-6aff-11ed-b98a-42010a8e0002",
+  "honeypot": "dionaea"
+}
+```
+* A total of 12090 records were exported from my honeypots. See the uploaded session.json for the complete list.*
 
 ### Deploying Additional Honeypot(s) (Optional)
 
-#### X Honeypot
+#### I deployed additonal 4 honeypots. 
 
-**Summary:** What does this honeypot simulate and do for a security researcher?
+- Cowrie
+- Conpot
+- ElasticHoney
+- Amun
 
-<img src="x-honeypot.gif">
+<img src="honeypot.png">
 
 ### Malware Capture and Identification (Optional)
 
