@@ -1,18 +1,19 @@
 # Honeypot Assignment
 
-**Time spent:** **X** hours spent in total
+**Time spent: 10 hours spent in total
 
 **Objective:** Create a honeynet using MHN-Admin. Present your findings as if you were requested to give a brief report of the current state of Internet security. Assume that your audience is a current employer who is questioning why the company should allocate anymore resources to the IT security team.
 
 ### MHN-Admin Deployment (Required)
 
-**Summary:** How did you deploy it? Did you use GCP, AWS, Azure, Vagrant, VirtualBox, etc.?
+**Summary:** I deployed MHN-admin application on GCP .
+- Please see gif for the steps. 
 
 <img src="mhn-admin.gif">
 
 ### Dionaea Honeypot Deployment (Required)
 
-**Summary:** Briefly in your own words, what does dionaea do?
+**Summary:** Dionaea is a low-interaction honeypot that is used to trap malware samples and attack payloads. It is meant to be a nepenthes successor, embedding python as scripting language, and uses libemu to detect shellcodes. It supports ipv6 and tls.
 
 <img src="dionaea-honeypot.gif">
 
