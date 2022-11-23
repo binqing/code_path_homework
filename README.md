@@ -19,6 +19,7 @@
 
 <img src="dionaea-honeypot.gif">
 
+
 ### Database Backup (Required) 
 
 **Summary:** MHN-Admin uses MongoDB to store the data collected from honeypots. The exported JSON file records the following attributes: 
@@ -65,6 +66,10 @@ MD5 Hash: *Run `md5sum` on the file and record the hash here.*
 SHA1 Hash: *Run `sha1sum` on the file and record the hash here.*
 
 <img src="x-malware.gif">
+
+## Resources
+
+GIFs created with [ScreenToGif](https://www.screentogif.com/) 
 
 ## Notes
 
