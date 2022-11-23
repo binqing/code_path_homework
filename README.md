@@ -44,7 +44,7 @@
   "honeypot": "dionaea"
 }
 ```
-* A total of 12090 records were exported from my honeypots. See the uploaded session.json for the complete list.*
+* A total of 12090 records were exported from my honeypots. See session.json file uploaded to this GitHub repofor the complete list.*
 ### Deploying Additional Honeypot(s) (Optional)
 
 #### I deployed additonal 4 honeypots. 
