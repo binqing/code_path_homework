@@ -43,7 +43,6 @@
 }
 ```
 * A total of 12090 records were exported from my honeypots. See the uploaded session.json for the complete list.*
-
 ### Deploying Additional Honeypot(s) (Optional)
 
 #### I deployed additonal 4 honeypots. 
@@ -53,7 +52,7 @@
 - ElasticHoney
 - Amun
 
-<img src="honeypot.png">
+<img src="honeypots.png">
 
 ### Malware Capture and Identification (Optional)
 
