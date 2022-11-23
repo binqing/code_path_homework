@@ -60,7 +60,7 @@
 
 #### X Malware
 
-**Summary:** I used VirusTotal to scan and determine what type of malware it is. Conpot honeypot captured it.
+**Summary:** I used VirusTotal to scan the malware. They were captured by a conpot honeypot.
 
 MD5 Hash: *e4e0917720d827ef0fb579644e37bac8*
 
@@ -72,7 +72,7 @@ Here is the gif:
 <img src="malware-gif.gif">
 
 
-**Summary:** This is also captured by conpot honeypot. 
+**Summary:** Malware shown in the gif below were also captured by a conpot honeypot. 
 
 MD5 Hash: *791be5467177745534ff841972ae74ca*
 
@@ -85,12 +85,14 @@ Here is the gif:
 <img src="malware-gif-2.gif">
 
 
-**Summary:** Dionaea honeypot captured the malware.
+
+**Summary:** These malware were captured by a dionaea honeypot.
 
 <img src="malware_3.png">
 
 
-**Summary:** I also tried running the md5sum and sha1sum commands on the session.json file for my honeypots on Kali Linux. 
+
+**Summary:** I also tried running the md5sum and sha1sum commands on the session.json file from my honeypots on Kali Linux. 
 
 MD5 Hash: *5f7ca6f64902da38e938eaf18fd13762*
 
