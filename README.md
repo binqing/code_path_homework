@@ -23,7 +23,8 @@
 ### Database Backup (Required) 
 
 **Summary:** MHN-Admin uses MongoDB to store the data collected from honeypots. The exported JSON file records the following attributes: 
-  - id, protocol, hpfeed_id, timestamp, source_ip, source_port, destination_port, identifier, and name of honeypot.
+ - id, protocol, hpfeed_id, timestamp, source_ip, source_port, destination_port, identifier, and the name of honeypot.
+ - Below is an sample record:
 ```
 {
   "_id": {
